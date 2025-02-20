@@ -16,7 +16,9 @@ alias tovim='cd ~/.config/nvim'
 alias so='source ~/.bashrc'
 
 alias kc='kubectl'
-complete -o default -F __start_kubectl kc
+
+# Kubectl Auto Complete - This is required if using the alias for kubectl
+# complete -o default -F __start_kubectl kc
 
 # Bash config
 alias editsh='vim ~/.bashrc'

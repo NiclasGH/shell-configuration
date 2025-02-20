@@ -2,14 +2,16 @@
 # Recommended to compare with template regularly
 # Device specific (with defaults)
 alias dev='cd ~/dev'
-alias int='/opt/idea/bin/idea.sh'
-# alias int='/mnt/c/Users/nicla/AppData/Local/Programs/IntelliJ\ IDEA\ Ultimate/bin' Windows
-alias rr='/opt/rust/bin/rustrover.sh' #rustrover
-# alias rr='/mnt/c/Users/nicla/AppData/Local/Programs/RustRover/bin' Windows
 
-alias tosetup='cd ~/linux-setup'
-alias editsetup='vim ~/linux-setup'
+# alias int='/mnt/c/Users/nicla/AppData/Local/Programs/IntelliJ\ IDEA\ Ultimate/bin'
+# alias rr='/mnt/c/Users/nicla/AppData/Local/Programs/RustRover/bin'
 
-alias pull-aliases='(cd ~/linux-setup; ~/linux-setup/pull.sh)'
-alias push-aliases='(cd ~/linux-setup; ~/linux-setup/push.sh)'
+# alias tosetup='cd ~/linux-setup'
+# alias editsetup='vim ~/linux-setup'
+
+# alias tosetup='cd ~/mac-setup'
+# alias editsetup='vim ~/mac-setup'
+
+alias pull-aliases='(cd ~/shell-configuration; ~/shell-configuration/pull.sh)'
+alias push-aliases='(cd ~/shell-configuration; ~/shell-configuration/push.sh)'
 

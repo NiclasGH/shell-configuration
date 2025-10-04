@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # Managed by script. 
 # Please keep this in sync using pull.sh before and push after making changes
@@ -9,6 +10,19 @@ function up() {
 		cd ..
 		levels=$(($levels - 1))
 	done
+}
+
+# Query bash aliases
+function qa() {
+	query=$1
+	if [[ ! -n $query ]]; then
+		echo "Please set a query"
+		return 1
+	fi
+
+	cat ~/.bash_aliases | grep $query
+	echo
+	cat ~/.bash_device | grep $query
 }
 
 # Rust

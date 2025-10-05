@@ -23,7 +23,7 @@ if [ -f ~/.tmux.conf ]; then
 fi
 
 git add .
-git commit -m "[script] aliases update"
+git commit -m "[script] shell configuration update"
 git push
 
 echo "Pushed shell configuration"

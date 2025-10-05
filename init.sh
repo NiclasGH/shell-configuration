@@ -4,4 +4,4 @@ cp ~/shell-configuration/configuration/.bash_device ~/.bash_device
 echo "source ~/.bash_device" >> ~/.bashrc
 echo "source ~/.bash_functions" >> ~/.bashrc
 echo "source ~/.bash_aliases" >> ~/.bashrc
-echo "Aliases successfully configured"
+echo "Shell configuration successfully initialized"

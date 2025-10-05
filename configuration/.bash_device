@@ -12,6 +12,6 @@ alias dev='cd ~/dev'
 # alias tosetup='cd ~/mac-setup'
 # alias editsetup='vim ~/mac-setup'
 
-alias pull-aliases='(cd ~/shell-configuration; ~/shell-configuration/pull.sh)'
-alias push-aliases='(cd ~/shell-configuration; ~/shell-configuration/push.sh)'
+alias pull-conf='(cd ~/shell-configuration; ~/shell-configuration/pull.sh)'
+alias push-conf='(cd ~/shell-configuration; ~/shell-configuration/push.sh)'
 

@@ -17,6 +17,11 @@ if [ -f ~/.bash_functions ]; then
     cp ~/.bash_functions configuration/.bash_functions
 fi
 
+if [ -f ~/.tmux.conf ]; then
+    rm configuration/.tmux.conf
+    cp ~/.tmux.conf configuration/.tmux.conf
+fi
+
 git add .
 git commit -m "[script] aliases update"
 git push

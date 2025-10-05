@@ -15,7 +15,7 @@ function up() {
 # Query bash aliases
 function qa() {
 	query=$1
-	if [[ ! -n $query ]]; then
+	if [[ -z $query ]]; then
 		echo "Please set a query"
 		return 1
 	fi
@@ -23,6 +23,33 @@ function qa() {
 	cat ~/.bash_aliases | grep $query
 	echo
 	cat ~/.bash_device | grep $query
+}
+
+# Create tmux session in dev folder
+function tc() {
+	session=$1
+	project="$HOME/dev/$session"
+
+	if [[ -z $session ]]; then
+		echo "Usage: tc <project-name>"
+		echo "Available projects:"
+		ls -1 ~/dev/
+		return 1
+	fi
+
+	tmux has-session -t $session &> /dev/null
+
+	if [[ $? != 0 ]]; then # exit code
+		if [[ ! -d $project ]]; then
+			echo "$project does not exist"
+			return 1
+		fi
+
+		tmux new-session -s $session -d
+		tmux send-keys -t $session "vim $project" C-m
+	fi
+
+	tmux attach -t $session
 }
 
 # Rust

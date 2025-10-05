@@ -25,26 +25,41 @@ function qa() {
 	cat ~/.bash_device | grep $query
 }
 
-# Create tmux session in dev folder
+# Fuzzy moves into a project
+function gdev() {
+	query=$1
+	project=$(find $HOME/dev/ -mindepth 1 -maxdepth 1 -type d | fzf --prompt="Select project: " -q "$query")
+	if [[ -z $project ]]; then
+		echo "No project selected"
+		return 1
+	fi
+
+	cd $project
+}
+
+# Create tmux session in project folder
 function tc() {
 	session=$1
-	project="$HOME/dev/$session"
 
 	if [[ -z $session ]]; then
-		echo "Usage: tc <project-name>"
-		echo "Available projects:"
-		ls -1 ~/dev/
-		return 1
+		project=$(find $HOME/dev -mindepth 1 -maxdepth 1 -type d | fzf --prompt="Select project: ")
+		if [[ -z $project ]]; then
+			echo "No project selected"
+			return 1
+		fi
+		session=$(basename "$project")
+	else
+		project="$HOME/dev/$session"
+
+		if [[ ! -d $project ]]; then
+			echo "No projects matching '$session'"
+			return 1
+		fi
 	fi
 
 	tmux has-session -t $session &> /dev/null
 
 	if [[ $? != 0 ]]; then # exit code
-		if [[ ! -d $project ]]; then
-			echo "$project does not exist"
-			return 1
-		fi
-
 		tmux new-session -s $session -d
 		tmux send-keys -t $session "vim $project" C-m
 	fi

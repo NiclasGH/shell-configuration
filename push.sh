@@ -26,4 +26,4 @@ git add .
 git commit -m "[script] aliases update"
 git push
 
-echo "Pushed aliases"
+echo "Pushed shell configuration"

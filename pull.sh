@@ -22,4 +22,4 @@ if [ -f ~/.tmux.conf ]; then
 fi
 cp ./configuration/.tmux.conf ~/.tmux.conf
 
-echo "Pulled aliases!"
+echo "Pulled shell configuration"

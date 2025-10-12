@@ -38,7 +38,7 @@ function gdev() {
 }
 
 # Create tmux session in project folder
-function tc() {
+function gt() {
 	query=$1
 
 	project=$(find $HOME/dev -mindepth 1 -maxdepth 1 -type d | fzf --prompt="Select project: " -q "$query")

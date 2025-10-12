@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Initalize aliases - NOT idempotent
 (cd ~/shell-configuration; ./pull.sh)
 cp ~/shell-configuration/configuration/.bash_device ~/.bash_device

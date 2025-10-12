@@ -39,32 +39,29 @@ function gdev() {
 
 # Create tmux session in project folder
 function tc() {
-	session=$1
+	query=$1
 
-	if [[ -z $session ]]; then
-		project=$(find $HOME/dev -mindepth 1 -maxdepth 1 -type d | fzf --prompt="Select project: ")
-		if [[ -z $project ]]; then
-			echo "No project selected"
-			return 1
-		fi
-		session=$(basename "$project")
-	else
-		project="$HOME/dev/$session"
-
-		if [[ ! -d $project ]]; then
-			echo "No projects matching '$session'"
-			return 1
-		fi
+	project=$(find $HOME/dev -mindepth 1 -maxdepth 1 -type d | fzf --prompt="Select project: " -q "$query")
+	if [[ -z $project ]]; then
+		echo "No project selected"
+		return 1
 	fi
+
+	session=$(basename "$project")
 
 	tmux has-session -t $session &> /dev/null
 
 	if [[ $? != 0 ]]; then # exit code
-		tmux new-session -s $session -d
+		# C-m is basically enter
+		tmux new-session -d -s $session
+		tmux rename-window -t $session:0 "Vim"
 		tmux send-keys -t $session "vim $project" C-m
+
+		tmux new-window -t $session:1 -n "Terminal"
+		tmux send-keys -t "terminal" "cd $project" C-m "clear" C-m
 	fi
 
-	tmux attach -t $session
+	tmux attach -t $session:0
 }
 
 # Rust

@@ -58,7 +58,7 @@ function gt() {
 		tmux send-keys -t $session "vim $project" C-m
 
 		tmux new-window -t $session:1 -n "Terminal"
-		tmux send-keys -t "terminal" "cd $project" C-m "clear" C-m
+		tmux send-keys -t "Terminal" "cd $project" C-m "clear" C-m
 	fi
 
 	tmux attach -t $session:0

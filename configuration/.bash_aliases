@@ -3,6 +3,7 @@
 # Core
 alias ll='ls -alF'
 alias gitm='git commit -m'
+alias gitam='git commit --amend'
 alias gita='git add .'
 alias gitpullf='git reset --hard && git fetch && git pull'
 alias gitpull='git stash && git fetch && git pull && git stash pop'

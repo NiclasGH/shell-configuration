@@ -37,6 +37,24 @@ function gdev() {
 	cd $project
 }
 
+function tvim() {
+	project=$HOME/.config/nvim
+	session=nvim
+
+	tmux has-session -t $session &> /dev/null
+	if [[ $? != 0 ]]; then # exit code
+		# C-m is basically enter
+		tmux new-session -d -s $session
+		tmux rename-window -t $session:0 "Vim"
+		tmux send-keys -t $session "vim $project" C-m
+
+		tmux new-window -t $session:1 -n "Terminal"
+		tmux send-keys -t "Terminal" "cd $project" C-m "clear" C-m
+	fi
+
+	tmux attach -t $session:0
+}
+
 # Create tmux session in project folder
 function gt() {
 	query=$1

@@ -12,13 +12,8 @@ alias vim='nvim'
 alias query='ls | grep'
 alias editvim='vim ~/.config/nvim'
 alias tovim='cd ~/.config/nvim'
-alias so='source ~/.bashrc'
-alias test='test2'
 
 alias kc='kubectl'
-
-# Kubectl Auto Complete - This is required if using the alias for kubectl
-# complete -o default -F __start_kubectl kc
 
 # Bash config
 alias editsh='vim ~/.bashrc'
@@ -27,4 +22,5 @@ alias editzsh='vim ~/.zshrc'
 # Alias
 alias aliases='(cat ~/.bash_aliases && echo && cat ~/.bash_device) | less'
 alias editaliases='vim ~/.bash_aliases'
+alias editfunctions='vim ~/.bash_functions'
 alias editdevice='vim ~/.bash_device'

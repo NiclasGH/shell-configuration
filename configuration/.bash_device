@@ -15,3 +15,5 @@ alias dev='cd ~/dev'
 alias pull-conf='(cd ~/shell-configuration; ~/shell-configuration/pull)'
 alias push-conf='(cd ~/shell-configuration; ~/shell-configuration/push)'
 
+# Kubectl Auto Complete - This is required if using the alias for kubectl
+# complete -o default -F __start_kubectl kc

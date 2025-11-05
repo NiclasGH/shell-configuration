@@ -13,6 +13,7 @@ alias query='ls | grep'
 alias editvim='vim ~/.config/nvim'
 alias tovim='cd ~/.config/nvim'
 alias m='make'
+alias c='cargo'
 
 alias kc='kubectl'
 

@@ -7,13 +7,10 @@ alias gitam='git commit --amend'
 alias gita='git add .'
 alias gitpullf='git reset --hard && git fetch && git pull'
 alias gitpull='git stash && git fetch && git pull && git stash pop'
-alias code='codium'
 alias vim='nvim'
 alias query='ls | grep'
 alias editvim='vim ~/.config/nvim'
 alias tovim='cd ~/.config/nvim'
-alias m='make'
-alias c='cargo'
 
 alias kc='kubectl'
 

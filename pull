@@ -5,12 +5,12 @@ if [[ $(git status --porcelain) ]]; then
   exit 1
 fi
 
-if ! cmp -s ./configuration/.bash_aliases ~/.bash_aliases; then
+if [ -f ~/.bash_aliases ] && ! cmp -s ./configuration/.bash_aliases ~/.bash_aliases; then
     echo "Your local .bash_aliases differs from the managed version"
     exit 1
 fi
 
-if ! cmp -s ./configuration/.bash_functions ~/.bash_functions; then
+if [ -f ~/.bash_functions ] && ! cmp -s ./configuration/.bash_functions ~/.bash_functions; then
     echo "Your local .bash_functions differs from the managed version"
     exit 1
 fi

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Initalize aliases - NOT idempotent
-(cd ~/shell-configuration; ./pull.sh)
+(cd ~/shell-configuration; ./pull)
 cp ~/shell-configuration/configuration/.bash_device ~/.bash_device
 echo "source ~/.bash_device" >> ~/.bashrc
 echo "source ~/.bash_functions" >> ~/.bashrc

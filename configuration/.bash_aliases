@@ -11,6 +11,7 @@ alias vim='nvim'
 alias query='ls | grep'
 alias editvim='vim ~/.config/nvim'
 alias tovim='cd ~/.config/nvim'
+alias please='sudo !!'
 
 alias kc='kubectl'
 

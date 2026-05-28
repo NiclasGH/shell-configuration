@@ -11,7 +11,6 @@ alias vim='nvim'
 alias query='ls | grep'
 alias editvim='vim ~/.config/nvim'
 alias tovim='cd ~/.config/nvim'
-alias please='sudo !!'
 
 alias kc='kubectl'
 
@@ -24,3 +23,12 @@ alias aliases='(cat ~/.bash_aliases && echo && cat ~/.bash_device) | less'
 alias editaliases='vim ~/.bash_aliases'
 alias editfunctions='vim ~/.bash_functions'
 alias editdevice='vim ~/.bash_device'
+
+# esp-idf
+alias init-idf='source $HOME/esp/esp-idf/export.sh'
+alias idf='idf.py'
+alias ebuild='idf.py build'
+alias eflash='idf.py flash -p /dev/ttyUSB0'
+alias emenu='idf.py menuconfig'
+alias emonitor='idf.py monitor -p /dev/ttyUSB0'
+alias eupdate='ebuild && eflash && emonitor'

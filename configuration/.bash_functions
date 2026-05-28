@@ -12,16 +12,9 @@ function up() {
 	done
 }
 
-# Clone from my personal github
-function gitclone() {
-	if [[ $# -ne 1 ]]; then
-		echo "Error: Expected 1 parameter. Usage: $0 <repo>"
-		exit 1
-	fi
-
-	repo=$1
-
-	git clone git@github.com:NiclasGH/${repo}.git
+# run last command as sudo
+function please() {
+  sudo $(fc -ln -1)
 }
 
 # Query bash aliases
